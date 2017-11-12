@@ -60,5 +60,5 @@ bsort1([X,Y | L], [X|LS],SWITCH) :- less(X,Y), bsort1([Y|L], LS,SWITCH).
 bsort1([X,Y | L], [Y|LS],1) :- not(less(X,Y)), bsort1([X|L], LS,_).
 
 %% bsort([],[]).
-bsort(L,S) :- bsort1(L,S,X), X=0.
-bsort(L,S) :- bsort1(L,LS,X), X=1, bsort(LS,S).
+bsort(L,S) :- bsort1(L,S,X), X=:=0.
+bsort(L,S) :- bsort1(L,LS,X), X=:=1, bsort(LS,S).
