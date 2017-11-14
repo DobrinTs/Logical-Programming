@@ -54,4 +54,3 @@ z(X,Y) :- n(X1,Y1), member(C1,[1,-1]), member(D1,[1,-1]), X is X1*C1, Y is Y1*D1
 nn(N,L) :- n(S), nn(N,L,S).
 nn(0,[],0).
 nn(N,[H|T],S) :- N>0, between(H,0,S), S1 is S-H, N1 is N-1, nn(N1,T,S1).
-
