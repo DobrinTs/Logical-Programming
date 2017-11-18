@@ -28,3 +28,21 @@ rev(S,[H|T], R) :- rev([H|S], T, R).
 
 n(0).
 n(X) :- n(Y), X is Y+1.
+
+%% -----------------------------------------------
+%% консултация
+unpack(G,E) :- helpMePack(V,E,[]), G=[V,E].
+
+helpMePack(V,[],V).
+helpMePack(V,[[X,Y]|T],V1) :- addIfNot(X,V1,V2), addIfNot(Y,V2,V3), helpMePack(V,T,V3).
+
+addIfNot(X,V,V) :- member(X,V).
+addIfNot(X,V,[X|V]) :- not(member(X,V)).
+
+p(X) :- X1 is X+10, p1(X1).
+p1(Y) :- write(Y).
+
+checker(X,FN) :- X>FN, X1 is X//10, checker(X1,FN).
+checker(X,X).
+
+www(X, Y) :- Y is X//10.
